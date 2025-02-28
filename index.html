@@ -16,8 +16,10 @@
     require([
      "esri/config",
       "esri/Map",
-      "esri/views/MapView"
-    ], function (esriConfig,Map, MapView) {
+      "esri/views/MapView",
+      "esri/Graphic",  
+      "esri/layers/GraphicsLayer" 
+    ], function (esriConfig,Map, MapView,Graphic,GraphicsLayer) {
 
       esriConfig.apiKey = "5b9a8383baa844fd81f10fab052777a1";
       const map = new Map({
