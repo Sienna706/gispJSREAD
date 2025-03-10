@@ -1,0 +1,58 @@
+# Code Citations
+
+## License: unknown
+https://github.com/Drothic/Pscion-Website/tree/2a940d5c1d6d614c5f33553de6ec1eaae4d1cf3c/index.html
+
+```
+</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+
+  <!-
+```
+
+
+## License: unknown
+https://github.com/juliannesay/576lab2archive/tree/197b5e8a35673e7dab3df82fdf98a4721ebd73c9/index.html
+
+```
+title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+
+  <!-- calls
+```
+
+
+## License: unknown
+https://github.com/angelica-v/cs422-bikeApp/tree/1fb38e1208abadb6e76b42e77a22d58876432123/testMapHTML/popupDot.html
+
+```
+stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.25/"></script>
+```
+
+
+## License: unknown
+https://github.com/sounny/agol/tree/46c38f4778af28a0c6bf2f8ad7cffa17434038a5/index.html
+
+```
+charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+
+  <!-- calls for the arcgis api
+```
+
+
+## License: unknown
+https://github.com/TxDOT/ELRSQ/tree/b0c1696b28883b53b6e54e5ae878925a86354b53/single-route-rpm2.html
+
+```
+>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.25/
+```
+
