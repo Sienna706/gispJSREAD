@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello, AGOL!!!</title>
+  <title>Hello, Map!</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
@@ -12,62 +12,24 @@
 
   <!-- Adding the modules, API key, and map constant needed for a full screen map app -->
   <script>
+  
     require([
-      "esri/config",
+     "esri/config",
       "esri/Map",
-      "esri/views/MapView",
-      "esri/Graphic",  
-      "esri/layers/GraphicsLayer" 
-    ], function (esriConfig, Map, MapView, Graphic, GraphicsLayer) {
+      "esri/views/MapView"
+    ], function (esriConfig,Map, MapView) {
 
       esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurNAUgv3aeRUmzJ4ckMevLQLfVJhdc-z1-a5rmBvbZM6HiAtWhTkHR1uPqL3lwJdP49LWHB6rjySi-OGZeNP1ea6oiztHSf22dFyO6r4o94L1an9zLTOBsN3vlqSz7k8MyUO9e1udJ3zNViSQ518xOFVwCnGBfyh40rSb4E2X3zsumGVzsUowRjXGPUi8Odwr1Y9iVZinjPQa-7TSBIuR8E4.AT1_EtHHMprs";
-      
       const map = new Map({
-        basemap: "streets-vector" // Basemap layer
+        basemap: "arcgis-topographic" // Basemap layer
       });
 
       const view = new MapView({
-        map: map,
-        center: [19.9, 155.6], // Longitude, latitude of Hawaii
-        zoom: 5, // Zoom level
-        container: "viewDiv" // Div element
-      });
-
-      view.when(() => {
-        console.log("Map and View are ready");
-
-        // Create a GraphicsLayer
-        const graphicsLayer = new GraphicsLayer();
-        map.add(graphicsLayer);
-
-        const point = { //Create a point  
-          type: "point",  
-          longitude: 19.4069,    //long lat of Mount Kilauea
-          latitude: 155.2834  
-        };
-
-        const simpleMarkerSymbol = {  
-          type: "simple-marker",  
-          color: [0, 0, 139],  // Color of blues rock
-          outline: {  
-            color: [255, 255, 255], // White  
-            width: 1
-          }  
-        };
-
-        // Add the point graphic to the graphics layer
-        const pointGraphic = new Graphic({
-          geometry: point,
-          symbol: simpleMarkerSymbol
+          map: map,
+          center: [-97.7431, 30.2672], // Longitude, latitude
+          zoom: 13, // Zoom level
+          container: "viewDiv" // Div element
         });
-        graphicsLayer.add(pointGraphic);
-
-      }, (error) => {
-        console.error("The view's resources failed to load: ", error);
-      });
-
-    }, function(error) {
-      console.error("Require failed to load modules: ", error);
     });
   </script>
 
