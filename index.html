@@ -20,7 +20,10 @@
 
       //adding in the modules for the graphic and graphic layer 
       "esri/Graphic",
-      "esri/layers/GraphicsLayer"
+      "esri/layers/GraphicsLayer",
+
+      "esri/geometry/Polyline",
+      "esri/geometry/Polygon",
       
     ], function (esriConfig,Map, MapView, Graphic, GraphicsLayer) {
 
@@ -59,18 +62,83 @@
     }
   };
 
+  // Define the popup properties
+  const popupTemplate = {
+    title: "{Name}",
+    content: "{Description}"
+ }
+ const attributes = {
+    Name: "Stevie Ray Vaughan Statue",
+    Description: "A bronze sculpture of Stevie Ray Vaughan by Ralph Helmick"
+ }
+
     // Create the point graphic
     const pointGraphic = new Graphic({
       geometry: point,
-      symbol: simpleMarkerSymbol  // Corrected symbol reference
+      symbol: simpleMarkerSymbol,  // Corrected symbol reference
+
+    //adding popup properties 
+    attributes: attributes,
+    popupTemplate: popupTemplate
+
   });
 
     // Add the point to the graphics layer
     graphicsLayer.add(pointGraphic);
 
 
+    // Define the polyline geometry
+    const polyline = {
+      type: "polyline",
+      paths: [
+        [-97.750689, 30.263098], // Stevie Ray Vaughan Statue
+        [-97.7431, 30.2672] // Texas State Capitol
+      ]
+    };
+    // Define the symbol for the polyline graphic
+    const simpleLineSymbol = {
+      type: "simple-line",
+      color: [255, 192, 203,0.4], // Pink, 20% opacity
+      width: 2
+    };
+    // Create the polyline graphic
+    const polylineGraphic = new Graphic({
+      geometry: polyline,
+      symbol: simpleLineSymbol
+    });
+    // Add the polyline to the graphics layer
+    graphicsLayer.add(polylineGraphic);
+
+
+    // Define the polygon geometry
+    const polygon = {
+      type: "polygon",
+      rings: [
+        [-97.7431, 30.2672], // Texas State Capitol
+        [-97.7431, 30.2742], // North
+        [-97.7331, 30.2742], // East
+        [-97.7331, 30.2672] // South
+      ]
+    };
+    // Define the symbol for the polygon graphic
+    const simpleFillSymbol = {
+      type: "simple-fill",
+      color: [255, 192, 203, 0.4], // Pink, 40% opacity
+      outline: {
+        color: [255, 255, 255],
+        width: 1
+      }
+    };
+    // Create the polygon graphic
+    const polygonGraphic = new Graphic({
+      geometry: polygon,
+      symbol: simpleFillSymbol
+    });
+    // Add the polygon to the graphics layer
+    graphicsLayer.add(polygonGraphic);
+
   });
-  </script>
+</script>
 
   <!-- css to make a full screen map -->
   <style>
