@@ -164,6 +164,14 @@ const popupEduusa = {
     //adding the feature layer to the map
     map.add(usaeduLayer);
 
+
+    //adding the airports feature layer
+    const airportsLayer = new FeatureLayer({
+      url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/US_AirportsJS/FeatureServer",
+    });
+    //adding the airports feature layer to the map
+    map.add(airportsLayer);
+    
   });
 </script>
 
