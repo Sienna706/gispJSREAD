@@ -179,9 +179,11 @@ const popupEduusa = {
     //adding the airports feature layer
     const airportsLayer = new FeatureLayer({
       url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports/FeatureServer",
-      renderer: airportRenderer //calling the icon
-    });
+      renderer: airportRenderer, //calling the icon
+
+      definitionExpression: "Fac_Type = 'AIRPORT'" //filtering the airports
     
+    });
     //adding the airports feature layer to the map
     map.add(airportsLayer);
 
