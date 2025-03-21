@@ -141,15 +141,29 @@
     graphicsLayer.add(polygonGraphic);
 
 
-    //adding the const for the feature layer 
-    const usaeduLayer = new FeatureLayer({
-      url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer" //get URL from AGOL Item Page
-  });
 
-    // Add the feature layer to the map
+    //define a pop-up for usaeduLayer
+const popupEduusa = {
+  "title": "{INSTNM}",
+  "content": `
+    <b>City:</b> {CITY}<br>
+    <b>State:</b> {STABBR}<br>
+    <b>Phone:</b> {GENTELE}<br>
+    <b>Website:</b> <a href="{WEBADDR}" target="_blank">{WEBADDR}</a><br>
+  `
+}
+      //adding the const fro the feature layer 
+      const usaeduLayer = new FeatureLayer({
+        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer/0", //get URL from AGOL Item Page
+
+      //adding the popup here
+        outFields: ["CITY","STABBR","GENTELE","WEBADDR"],
+        popupTemplate: popupEduusa
+      });
+
+    //adding the feature layer to the map
     map.add(usaeduLayer);
 
-    
   });
 </script>
 
